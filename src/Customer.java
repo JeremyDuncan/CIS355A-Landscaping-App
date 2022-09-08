@@ -5,12 +5,12 @@ import java.text.DecimalFormat;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author Jeremy Duncan
  */
 public class Customer {
+
     private int customerID;
     private String name;
     private String address;
@@ -45,9 +45,9 @@ public class Customer {
     public String toString() {
         return name; // Only show customer's name
     }
-    
+
     public String getDetails() {
-        DecimalFormat fmt = new DecimalFormat( "$#,##0.00" );
+        DecimalFormat fmt = new DecimalFormat("$#,##0.00");
         String output = name + "\n";
         output += address + "\n";
         output += "Type: " + yardType + "\n";
@@ -57,5 +57,63 @@ public class Customer {
 
         return output;
     }
-   
+    
+    // Getters and Setters
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getYardType() {
+        return yardType;
+    }
+
+    public void setYardType(String yardType) {
+        this.yardType = yardType;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+    
+
 }
