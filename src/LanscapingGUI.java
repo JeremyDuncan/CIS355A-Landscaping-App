@@ -14,7 +14,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
      */
     public LanscapingGUI() {
         initComponents();
-        
+
         // Center the form
         this.setLocationRelativeTo(null);
     }
@@ -42,7 +42,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         btnCalculate = new javax.swing.JButton();
         lbOrderSummary = new javax.swing.JLabel();
         scrOrderSummary = new javax.swing.JScrollPane();
-        txaOrderSummary = new javax.swing.JTextArea();
+        txaOrderInfo = new javax.swing.JTextArea();
         btnSubmitOrder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,24 +61,38 @@ public class LanscapingGUI extends javax.swing.JFrame {
         lblAddress.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         lblAddress.setText("Address:");
 
+        txtName.setNextFocusableComponent(txtAddress);
+
+        txtAddress.setNextFocusableComponent(txtLength);
+
         lblInstructions2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblInstructions2.setText("Enter the length and width of your yard:");
 
         lblLength.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         lblLength.setText("Length (ft.)");
 
+        txtLength.setNextFocusableComponent(txtWidth);
+
         lblWidth.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         lblWidth.setText("Width (ft.)");
 
+        txtWidth.setNextFocusableComponent(btnCalculate);
+
         btnCalculate.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCalculate.setLabel("Calculate");
+        btnCalculate.setNextFocusableComponent(btnSubmitOrder);
+        btnCalculate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateActionPerformed(evt);
+            }
+        });
 
         lbOrderSummary.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbOrderSummary.setText("Order Summary:");
 
-        txaOrderSummary.setColumns(16);
-        txaOrderSummary.setRows(5);
-        scrOrderSummary.setViewportView(txaOrderSummary);
+        txaOrderInfo.setColumns(16);
+        txaOrderInfo.setRows(5);
+        scrOrderSummary.setViewportView(txaOrderInfo);
 
         btnSubmitOrder.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnSubmitOrder.setText("Submit Order");
@@ -162,6 +176,18 @@ public class LanscapingGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
+        // validate the inputs
+        if (validateInputs() == false) {
+            return;      // end the method if validation failed
+        }
+        
+        // create the Customer object and show the information
+        Customer cust = createCustomer();
+        txaOrderInfo.setText(cust.getDetails());
+
+    }//GEN-LAST:event_btnCalculateActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -209,7 +235,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblWidth;
     private javax.swing.JScrollPane scrOrderSummary;
-    private javax.swing.JTextArea txaOrderSummary;
+    private javax.swing.JTextArea txaOrderInfo;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtLength;
     private javax.swing.JTextField txtName;
