@@ -41,14 +41,15 @@ public class LanscapingGUI extends javax.swing.JFrame {
         txtWidth = new javax.swing.JTextField();
         btnCalculate = new javax.swing.JButton();
         lbOrderSummary = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        scrOrderSummary = new javax.swing.JScrollPane();
         txaOrderSummary = new javax.swing.JTextArea();
-        btnCalculate1 = new javax.swing.JButton();
+        btnSubmitOrder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jeremy Duncan Landscapes");
 
         lblCompanyName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblCompanyName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCompanyName.setText("Jeremy Duncan Lanscapes");
 
         lblInstructions1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -75,21 +76,21 @@ public class LanscapingGUI extends javax.swing.JFrame {
         lbOrderSummary.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbOrderSummary.setText("Order Summary:");
 
-        txaOrderSummary.setColumns(20);
+        txaOrderSummary.setColumns(16);
         txaOrderSummary.setRows(5);
-        jScrollPane1.setViewportView(txaOrderSummary);
+        scrOrderSummary.setViewportView(txaOrderSummary);
 
-        btnCalculate1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnCalculate1.setText("Submit Order");
+        btnSubmitOrder.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnSubmitOrder.setText("Submit Order");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblLength)
@@ -98,44 +99,37 @@ public class LanscapingGUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblWidth)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtWidth))
-                            .addComponent(btnCalculate))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCalculate1)))
+                                .addComponent(txtWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnCalculate)))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(lblInstructions2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(280, 280, 280)
-                                .addComponent(lblCompanyName))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(509, 509, 509)
-                                .addComponent(lbOrderSummary))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(lblInstructions2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblAddress)
-                                    .addComponent(lblName))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(lblInstructions1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                            .addComponent(lblAddress)
+                            .addComponent(lblName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(lblInstructions1)))
+                .addGap(31, 53, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(scrOrderSummary, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                    .addComponent(btnSubmitOrder)
+                    .addComponent(lbOrderSummary))
+                .addGap(40, 40, 40))
+            .addComponent(lblCompanyName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(lblCompanyName)
-                .addGap(30, 30, 30)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblInstructions1)
                     .addComponent(lbOrderSummary))
@@ -157,12 +151,12 @@ public class LanscapingGUI extends javax.swing.JFrame {
                             .addComponent(txtLength, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblWidth)
                             .addComponent(txtWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1))
+                    .addComponent(scrOrderSummary))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalculate)
-                    .addComponent(btnCalculate1))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(btnSubmitOrder))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -205,8 +199,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalculate;
-    private javax.swing.JButton btnCalculate1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton btnSubmitOrder;
     private javax.swing.JLabel lbOrderSummary;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCompanyName;
@@ -215,6 +208,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblLength;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblWidth;
+    private javax.swing.JScrollPane scrOrderSummary;
     private javax.swing.JTextArea txaOrderSummary;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtLength;
