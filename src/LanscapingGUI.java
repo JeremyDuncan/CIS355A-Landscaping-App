@@ -14,6 +14,9 @@ public class LanscapingGUI extends javax.swing.JFrame {
      */
     public LanscapingGUI() {
         initComponents();
+        
+        // Center the form
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -25,17 +28,141 @@ public class LanscapingGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblCompanyName = new javax.swing.JLabel();
+        lblInstructions1 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
+        lblInstructions2 = new javax.swing.JLabel();
+        lblLength = new javax.swing.JLabel();
+        txtLength = new javax.swing.JTextField();
+        lblWidth = new javax.swing.JLabel();
+        txtWidth = new javax.swing.JTextField();
+        btnCalculate = new javax.swing.JButton();
+        lbOrderSummary = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaOrderSummary = new javax.swing.JTextArea();
+        btnCalculate1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Jeremy Duncan Landscapes");
+
+        lblCompanyName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblCompanyName.setText("Jeremy Duncan Lanscapes");
+
+        lblInstructions1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblInstructions1.setText("Please enter your information:");
+
+        lblName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblName.setText("Name:");
+
+        lblAddress.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblAddress.setText("Address:");
+
+        lblInstructions2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblInstructions2.setText("Enter the length and width of your yard:");
+
+        lblLength.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblLength.setText("Length (ft.)");
+
+        lblWidth.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblWidth.setText("Width (ft.)");
+
+        btnCalculate.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnCalculate.setLabel("Calculate");
+
+        lbOrderSummary.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbOrderSummary.setText("Order Summary:");
+
+        txaOrderSummary.setColumns(20);
+        txaOrderSummary.setRows(5);
+        jScrollPane1.setViewportView(txaOrderSummary);
+
+        btnCalculate1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnCalculate1.setText("Submit Order");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblLength)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLength, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblWidth)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtWidth))
+                            .addComponent(btnCalculate))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCalculate1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(280, 280, 280)
+                                .addComponent(lblCompanyName))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(509, 509, 509)
+                                .addComponent(lbOrderSummary))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(lblInstructions2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblAddress)
+                                    .addComponent(lblName))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(lblInstructions1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lblCompanyName)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblInstructions1)
+                    .addComponent(lbOrderSummary))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblName)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAddress))
+                        .addGap(24, 24, 24)
+                        .addComponent(lblInstructions2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblLength)
+                            .addComponent(txtLength, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblWidth)
+                            .addComponent(txtWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalculate)
+                    .addComponent(btnCalculate1))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -77,5 +204,21 @@ public class LanscapingGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalculate;
+    private javax.swing.JButton btnCalculate1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbOrderSummary;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblCompanyName;
+    private javax.swing.JLabel lblInstructions1;
+    private javax.swing.JLabel lblInstructions2;
+    private javax.swing.JLabel lblLength;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblWidth;
+    private javax.swing.JTextArea txaOrderSummary;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtLength;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtWidth;
     // End of variables declaration//GEN-END:variables
 }
