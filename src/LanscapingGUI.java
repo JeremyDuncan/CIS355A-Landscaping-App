@@ -98,6 +98,11 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
         btnSubmitOrder.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnSubmitOrder.setText("Submit Order");
+        btnSubmitOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,6 +194,10 @@ public class LanscapingGUI extends javax.swing.JFrame {
         txaOrderInfo.setText(cust.getDetails());
 
     }//GEN-LAST:event_btnCalculateActionPerformed
+
+    private void btnSubmitOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitOrderActionPerformed
+        submitOrder();
+    }//GEN-LAST:event_btnSubmitOrderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -341,6 +350,10 @@ public class LanscapingGUI extends javax.swing.JFrame {
         Customer cust = new Customer(0, name, address, yardType,
                 length, width, totalCost);
         return cust;
+    }
+
+    public void submitOrder() {
+        JOptionPane.showMessageDialog(this, "Method is not complete.");
     }
 
 }
