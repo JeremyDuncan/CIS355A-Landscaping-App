@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author jeremyduncan
@@ -332,6 +331,16 @@ public class LanscapingGUI extends javax.swing.JFrame {
     }
 
     private Customer createCustomer() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String name = txtName.getText();
+        String address = txtAddress.getText();
+        double width = Double.parseDouble(txtWidth.getText());
+        double length = Double.parseDouble(txtLength.getText());
+        String yardType = "Grass";                // FIX THE TYPE
+        double totalCost = width * length * 5.0;  // FIX THE PRICE
+
+        Customer cust = new Customer(0, name, address, yardType,
+                length, width, totalCost);
+        return cust;
     }
+
 }
