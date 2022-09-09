@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -181,7 +184,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         if (validateInputs() == false) {
             return;      // end the method if validation failed
         }
-        
+
         // create the Customer object and show the information
         Customer cust = createCustomer();
         txaOrderInfo.setText(cust.getDetails());
@@ -241,4 +244,94 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtWidth;
     // End of variables declaration//GEN-END:variables
+
+    private boolean validateInputs() {
+        String sName = txtName.getText();
+        String sAddress = txtAddress.getText();
+        String sWidth = txtWidth.getText();
+        String sLength = txtLength.getText();
+
+        if (sName.equals("")) {
+            JOptionPane.showMessageDialog(this, "Enter a Name",
+                    "Name Error", JOptionPane.ERROR_MESSAGE);
+            txtName.requestFocusInWindow();
+            return false;
+        }
+
+        if (sAddress.equals("")) {
+            JOptionPane.showMessageDialog(this, "Enter a Address",
+                    "Address Error", JOptionPane.ERROR_MESSAGE);
+            txtAddress.requestFocusInWindow();
+            return false;
+        }
+
+        if (sAddress.length() <= 5) {
+            JOptionPane.showMessageDialog(this,
+                    "Address isn't long enough.",
+                    "Address Error", JOptionPane.ERROR_MESSAGE);
+            txtAddress.requestFocusInWindow();
+            return false;
+        }
+
+        if (sWidth.equals("")) {
+            JOptionPane.showMessageDialog(this, "Enter a Width",
+                    "Width Error", JOptionPane.ERROR_MESSAGE);
+            txtWidth.requestFocusInWindow();
+            return false;
+        }
+
+        try {
+            Double.parseDouble(sWidth);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Width must be a number",
+                    "Width Error", JOptionPane.ERROR_MESSAGE);
+            txtWidth.setText("");
+            txtWidth.requestFocusInWindow();
+            return false;
+        }
+
+        if (Double.parseDouble(sWidth) <= 0) {
+            JOptionPane.showMessageDialog(this,
+                    "Width must be greater than 0",
+                    "Width Error", JOptionPane.ERROR_MESSAGE);
+            txtLength.setText("");
+            txtLength.requestFocusInWindow();
+            return false;
+        }
+
+        if (sLength.equals("")) {
+            JOptionPane.showMessageDialog(this, "Enter a Length",
+                    "Length Error", JOptionPane.ERROR_MESSAGE);
+
+            txtLength.requestFocusInWindow();
+            return false;
+        }
+
+        try {
+            Double.parseDouble(sLength);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Length must be a number",
+                    "Length Error", JOptionPane.ERROR_MESSAGE);
+            txtLength.setText("");
+            txtLength.requestFocusInWindow();
+            return false;
+
+        }
+
+        if (Double.parseDouble(sLength) <= 0) {
+            JOptionPane.showMessageDialog(this,
+                    "Length must be must be greater than 0",
+                    "Length Error", JOptionPane.ERROR_MESSAGE);
+            txtLength.setText("");
+            txtLength.requestFocusInWindow();
+            return false;
+        } else {
+            // all is good so return true
+            return true;
+        }
+    }
+
+    private Customer createCustomer() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
