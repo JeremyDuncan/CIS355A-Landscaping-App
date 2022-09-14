@@ -49,8 +49,9 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jeremy Duncan Landscapes");
+        setResizable(false);
 
-        lblCompanyName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblCompanyName.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
         lblCompanyName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCompanyName.setText("Jeremy Duncan Landscapes");
 
@@ -137,9 +138,9 @@ public class LanscapingGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(lblInstructions1)))
-                .addGap(31, 53, Short.MAX_VALUE)
+                .addGap(31, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(scrOrderSummary, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                    .addComponent(scrOrderSummary, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                     .addComponent(btnSubmitOrder)
                     .addComponent(lbOrderSummary))
                 .addGap(40, 40, 40))
@@ -177,7 +178,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalculate)
                     .addComponent(btnSubmitOrder))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
