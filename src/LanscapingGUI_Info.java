@@ -43,9 +43,11 @@ public class LanscapingGUI_Info extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jeremy Duncan Landscapes");
-        setPreferredSize(new java.awt.Dimension(770, 340));
+        setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(700, 344));
+        setPreferredSize(new java.awt.Dimension(770, 360));
         setResizable(false);
-        setSize(new java.awt.Dimension(770, 340));
+        setSize(new java.awt.Dimension(770, 360));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCompanyName.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
@@ -56,7 +58,7 @@ public class LanscapingGUI_Info extends javax.swing.JFrame {
         lblInstructions1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblInstructions1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInstructions1.setText("Would you like a grass or gravel yard?");
-        getContentPane().add(lblInstructions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 87, 690, -1));
+        getContentPane().add(lblInstructions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 87, 720, -1));
 
         btnReset.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnReset.setText("Reset");
@@ -65,7 +67,7 @@ public class LanscapingGUI_Info extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 110, -1));
+        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 110, -1));
 
         btgYardType.add(rdoGrass);
         rdoGrass.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -86,18 +88,18 @@ public class LanscapingGUI_Info extends javax.swing.JFrame {
                 btnNextActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 110, -1));
+        getContentPane().add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 110, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel1.setText("$2 per sqft");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel2.setText("$5 per sqft");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 80, -1));
 
-        lblImage.setText("jLabel3");
-        getContentPane().add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 150, 100));
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Dirt_400.jpg"))); // NOI18N
+        getContentPane().add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 140, 100));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
