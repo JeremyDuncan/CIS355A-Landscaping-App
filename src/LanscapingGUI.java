@@ -52,7 +52,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
         lblCompanyName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblCompanyName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCompanyName.setText("Jeremy Duncan Lanscapes");
+        lblCompanyName.setText("Jeremy Duncan Landscapes");
 
         lblInstructions1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblInstructions1.setText("Please enter your information:");

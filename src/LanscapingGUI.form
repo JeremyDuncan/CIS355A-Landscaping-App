@@ -124,7 +124,7 @@
           <Font name="Dialog" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Jeremy Duncan Lanscapes"/>
+        <Property name="text" type="java.lang.String" value="Jeremy Duncan Landscapes"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblInstructions1">
