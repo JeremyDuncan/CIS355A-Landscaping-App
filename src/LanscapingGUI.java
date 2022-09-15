@@ -54,7 +54,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         setTitle("Jeremy Duncan Landscapes");
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(700, 344));
-        setPreferredSize(new java.awt.Dimension(770, 400));
+        setPreferredSize(new java.awt.Dimension(770, 420));
         setResizable(false);
         setSize(new java.awt.Dimension(770, 360));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -123,6 +123,11 @@ public class LanscapingGUI extends javax.swing.JFrame {
         mnuFile.setText("File");
 
         mniExit.setText("Exit");
+        mniExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniExitActionPerformed(evt);
+            }
+        });
         mnuFile.add(mniExit);
 
         mnb1.add(mnuFile);
@@ -130,9 +135,19 @@ public class LanscapingGUI extends javax.swing.JFrame {
         mnuOrder.setText("Order");
 
         mniSubmitOrder.setText("Submit Order");
+        mniSubmitOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniSubmitOrderActionPerformed(evt);
+            }
+        });
         mnuOrder.add(mniSubmitOrder);
 
         mniReset.setText("Reset");
+        mniReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniResetActionPerformed(evt);
+            }
+        });
         mnuOrder.add(mniReset);
 
         mnb1.add(mnuOrder);
@@ -181,6 +196,19 @@ public class LanscapingGUI extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_rdoGravelActionPerformed
+
+    private void mniExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniExitActionPerformed
+// exit the application
+        System.exit(0);
+    }//GEN-LAST:event_mniExitActionPerformed
+
+    private void mniSubmitOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSubmitOrderActionPerformed
+        JOptionPane.showMessageDialog(this, "Method is not complete.");    }//GEN-LAST:event_mniSubmitOrderActionPerformed
+
+    private void mniResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniResetActionPerformed
+        // Reset
+        reset();
+    }//GEN-LAST:event_mniResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,7 +269,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         btgYardType.clearSelection();
 
         // put the image back to "Dirt"
-        lblImage.setIcon(new ImageIcon(this.getClass().getResource("dirt.jpg")));
+        lblImage.setIcon(new ImageIcon(this.getClass().getResource("./imgs/dirt_400.jpg")));
     }
 
 }
