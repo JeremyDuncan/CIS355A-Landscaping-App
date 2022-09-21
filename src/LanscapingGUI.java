@@ -631,11 +631,130 @@ public class LanscapingGUI extends javax.swing.JFrame {
     }
 
     private boolean validateInputs() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        // get inputs from user using the textboxes
+        String sName = txtName.getText();
+        String sAddress = txtAddress.getText();
+        String sWidth = txtWidth.getText();
+        String sLength = txtLength.getText();
+
+        // confirm that a radiobutton has been selected
+        if (btgYardType.getSelection() == null) {
+            JOptionPane.showMessageDialog(this,
+                    "Error. Please select the type of yard.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        // make sure we have a name for the order
+        if (sName.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a Name",
+                    "Name Error", JOptionPane.ERROR_MESSAGE);
+            txtName.requestFocusInWindow();
+            return false;
+        }
+
+        // make sure we have an address for the order
+        if (sAddress.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a Address",
+                    "Address Error", JOptionPane.ERROR_MESSAGE);
+            txtAddress.requestFocusInWindow();
+            return false;
+        }
+
+        if (sAddress.length() < 6) {
+            JOptionPane.showMessageDialog(this, "Address must be six characters or more.",
+                    "Address Error", JOptionPane.ERROR_MESSAGE);
+            txtAddress.requestFocusInWindow();
+            return false;
+        }
+
+        if (sWidth.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a Width",
+                    "Width Error", JOptionPane.ERROR_MESSAGE);
+            txtWidth.requestFocusInWindow();
+            return false;
+        }
+
+        // check to see if the width is a valid number
+        try {
+            Double.parseDouble(sWidth);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Width must be a number",
+                    "Width Error", JOptionPane.ERROR_MESSAGE);
+            txtWidth.setText("");
+            txtWidth.requestFocusInWindow();
+            return false;
+        }
+
+        if (Double.parseDouble(sWidth) <= 0) {
+            JOptionPane.showMessageDialog(this, "Width must be greater than 0",
+                    "Width Error", JOptionPane.ERROR_MESSAGE);
+            txtLength.setText("");
+            txtLength.requestFocusInWindow();
+            return false;
+        }
+
+        if (sLength.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a Length",
+                    "Length Error", JOptionPane.ERROR_MESSAGE);
+            txtLength.requestFocusInWindow();
+            return false;
+        }
+
+        try {
+            Double.parseDouble(sLength);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Length must be a number",
+                    "Length Error", JOptionPane.ERROR_MESSAGE);
+            txtLength.setText("");
+            txtLength.requestFocusInWindow();
+            return false;
+        }
+
+        if (Double.parseDouble(sLength) <= 0) {
+            JOptionPane.showMessageDialog(this,
+                    "Length must be must be greater than 0",
+                    "Length Error", JOptionPane.ERROR_MESSAGE);
+            txtLength.setText("");
+            txtLength.requestFocusInWindow();
+            return false;
+        }
+
+        // all is good so return true
+        return true;
+
     }
 
     private Customer createCustomer() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+          String name = txtName.getText();
+        String address = txtAddress.getText();
+        double width = Double.parseDouble(txtWidth.getText());
+        double length = Double.parseDouble(txtLength.getText());
+        String yardType = "";
+        double totalCost = 0.0;
+
+        if (rdoGrass.isSelected())
+        {
+            yardType = "Grass";
+            totalCost = GRASS_PER_SQFT * width * length;
+        }
+        else if (rdoGravel.isSelected())
+        {
+            yardType = "Gravel";
+            totalCost = GRAVEL_PER_SQFT * width * length;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, 
+ 			"Error. Please select a yard type.");
+            totalCost = 0.0;
+        }
+
+Customer cust = new Customer(0, name, address, yardType, 
+    length, width, totalCost);
+        return cust;
+
+        
     }
 
 }
