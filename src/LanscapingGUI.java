@@ -13,6 +13,11 @@ import javax.swing.JOptionPane;
  * @author jeremyduncan
  */
 public class LanscapingGUI extends javax.swing.JFrame {
+    
+    //CLASS LEVEL REFERENCES
+    
+    private final double GRASS_PER_SQFT = 5.0;
+    private final double GRAVEL_PER_SQFT = 2.0;
 
     /**
      * Creates new form LanscapingGUI
