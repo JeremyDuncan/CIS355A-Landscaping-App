@@ -377,11 +377,11 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 .addComponent(scrOrderSummary1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerListLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(74, 74, 74)
                 .addComponent(lbCustomerList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblCustomerDetails)
-                .addGap(125, 125, 125))
+                .addGap(138, 138, 138))
             .addGroup(pnlCustomerListLayout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(btnLoad)
@@ -395,7 +395,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
             .addGroup(pnlCustomerListLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblCompanyName2)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustomerDetails)
                     .addComponent(lbCustomerList))
@@ -407,7 +407,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
                     .addComponent(btnLoad))
-                .addGap(21, 21, 21))
+                .addGap(36, 36, 36))
         );
 
         lblCustomerDetails.getAccessibleContext().setAccessibleName("Customer Details");
