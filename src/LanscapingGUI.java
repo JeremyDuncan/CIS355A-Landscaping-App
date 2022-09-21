@@ -34,14 +34,16 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         btgYardType = new javax.swing.ButtonGroup();
+        tabMain = new javax.swing.JTabbedPane();
+        pnlWelcome = new javax.swing.JPanel();
         lblCompanyName = new javax.swing.JLabel();
         lblInstructions1 = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
         rdoGrass = new javax.swing.JRadioButton();
         rdoGravel = new javax.swing.JRadioButton();
         btnNext = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblGravelCost = new javax.swing.JLabel();
+        lblGrassCost = new javax.swing.JLabel();
         lblImage = new javax.swing.JLabel();
         mnbMain = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
@@ -102,13 +104,72 @@ public class LanscapingGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel1.setText("$2 per sqft");
+        lblGravelCost.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        lblGravelCost.setText("$2 per sqft");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel2.setText("$5 per sqft");
+        lblGrassCost.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        lblGrassCost.setText("$5 per sqft");
 
         lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Dirt_400.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout pnlWelcomeLayout = new javax.swing.GroupLayout(pnlWelcome);
+        pnlWelcome.setLayout(pnlWelcomeLayout);
+        pnlWelcomeLayout.setHorizontalGroup(
+            pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                        .addComponent(lblGrassCost, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addComponent(lblGravelCost))
+                    .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                        .addComponent(rdoGrass)
+                        .addGap(134, 134, 134)
+                        .addComponent(rdoGravel)))
+                .addContainerGap(249, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlWelcomeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(105, 105, 105))
+            .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(lblCompanyName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblInstructions1, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE))
+        );
+        pnlWelcomeLayout.setVerticalGroup(
+            pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                        .addComponent(btnNext)
+                        .addGap(16, 16, 16)
+                        .addComponent(btnReset))
+                    .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                        .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rdoGrass)
+                            .addComponent(rdoGravel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblGrassCost)
+                            .addComponent(lblGravelCost))
+                        .addGap(18, 18, 18)
+                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                    .addGap(0, 10, Short.MAX_VALUE)
+                    .addComponent(lblCompanyName)
+                    .addGap(38, 38, 38)
+                    .addComponent(lblInstructions1)
+                    .addGap(0, 249, Short.MAX_VALUE)))
+        );
+
+        tabMain.addTab("Welcome", pnlWelcome);
 
         mnuFile.setText("File");
 
@@ -148,92 +209,18 @@ public class LanscapingGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblCompanyName, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(lblInstructions1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(rdoGrass)
-                .addGap(134, 134, 134)
-                .addComponent(rdoGravel))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(130, 130, 130)
-                .addComponent(jLabel1))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addComponent(tabMain)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(lblCompanyName)
-                .addGap(38, 38, 38)
-                .addComponent(lblInstructions1)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rdoGrass)
-                    .addComponent(rdoGravel))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(btnNext)
-                        .addGap(16, 16, 16)
-                        .addComponent(btnReset))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tabMain)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        // call reset method
-        reset();
-
-    }//GEN-LAST:event_btnResetActionPerformed
-
-    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-// create the second GUI form
-        LanscapingGUI_Info infoForm = new LanscapingGUI_Info();
-
-// set default close operation to "dispose" so application stays open
-        infoForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-// launch the second GUI form by making it visible
-        infoForm.setVisible(true);
-
-    }//GEN-LAST:event_btnNextActionPerformed
-
-    private void rdoGrassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoGrassActionPerformed
-        if (rdoGrass.isSelected()) {
-            // look in directory where class exists, and get location of "grass.jpg"
-            URL location = this.getClass().getResource("./imgs/grass_400.jpg");
-
-            // create image using the location of "grass.jpg"
-            ImageIcon icon = new ImageIcon(location);
-
-            // set the image icon to the label
-            lblImage.setIcon(icon);
-        }
-
-    }//GEN-LAST:event_rdoGrassActionPerformed
-
-    private void rdoGravelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoGravelActionPerformed
-        if (rdoGravel.isSelected()) {
-// find image, create image icon, and set image icon to label
-            lblImage.setIcon(new ImageIcon(this.getClass().getResource("./imgs/dirt_400.jpg")));
-        }
-
-    }//GEN-LAST:event_rdoGravelActionPerformed
 
     private void mniExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniExitActionPerformed
 // exit the application
@@ -247,6 +234,42 @@ public class LanscapingGUI extends javax.swing.JFrame {
         // Reset
         reset();
     }//GEN-LAST:event_mniResetActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // call reset method
+        reset();
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void rdoGrassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoGrassActionPerformed
+        if (rdoGrass.isSelected()) {
+            // look in directory where class exists, and get location of "grass.jpg"
+            URL location = this.getClass().getResource("./imgs/grass_400.jpg");
+
+            // create image using the location of "grass.jpg"
+            ImageIcon icon = new ImageIcon(location);
+
+            // set the image icon to the label
+            lblImage.setIcon(icon);
+        }
+    }//GEN-LAST:event_rdoGrassActionPerformed
+
+    private void rdoGravelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoGravelActionPerformed
+        if (rdoGravel.isSelected()) {
+            // find image, create image icon, and set image icon to label
+            lblImage.setIcon(new ImageIcon(this.getClass().getResource("./imgs/dirt_400.jpg")));
+        }
+    }//GEN-LAST:event_rdoGravelActionPerformed
+
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+        // create the second GUI form
+        LanscapingGUI_Info infoForm = new LanscapingGUI_Info();
+
+        // set default close operation to "dispose" so application stays open
+        infoForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        // launch the second GUI form by making it visible
+        infoForm.setVisible(true);
+    }//GEN-LAST:event_btnNextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,9 +310,9 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup btgYardType;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnReset;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCompanyName;
+    private javax.swing.JLabel lblGrassCost;
+    private javax.swing.JLabel lblGravelCost;
     private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblInstructions1;
     private javax.swing.JMenuBar mnbMain;
@@ -298,8 +321,10 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem mniSubmitOrder;
     private javax.swing.JMenu mnuFile;
     private javax.swing.JMenu mnuOrder;
+    private javax.swing.JPanel pnlWelcome;
     private javax.swing.JRadioButton rdoGrass;
     private javax.swing.JRadioButton rdoGravel;
+    private javax.swing.JTabbedPane tabMain;
     // End of variables declaration//GEN-END:variables
 
     private void reset() {
