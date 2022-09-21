@@ -82,7 +82,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="tabMain" alignment="0" pref="720" max="32767" attributes="0"/>
+          <Component id="tabMain" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -330,7 +330,7 @@
                       </Group>
                       <EmptySpace min="31" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="scrOrderSummary" alignment="2" pref="219" max="32767" attributes="0"/>
+                          <Component id="scrOrderSummary" alignment="2" pref="226" max="32767" attributes="0"/>
                           <Component id="btnSubmitOrder" alignment="2" min="-2" max="-2" attributes="0"/>
                           <Component id="lbOrderSummary" alignment="2" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -517,17 +517,17 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                      <Component id="lbOrderSummary2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbCustomerList" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lbOrderSummary1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCustomerDetails" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                      <Component id="btnCalculate1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <Component id="btnLoad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnSubmitOrder1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                      <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                   </Group>
                   <Component id="lblCompanyName2" alignment="1" max="32767" attributes="0"/>
               </Group>
@@ -539,32 +539,35 @@
                       <Component id="lblCompanyName2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbOrderSummary1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbOrderSummary2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCustomerDetails" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbCustomerList" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="scrOrderSummary1" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" pref="171" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="scrOrderSummary1" pref="186" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnCalculate1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSubmitOrder1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLoad" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lbOrderSummary1">
+            <Component class="javax.swing.JLabel" name="lblCustomerDetails">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Order Summary:"/>
+                <Property name="text" type="java.lang.String" value="Customer Details"/>
               </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Customer Details"/>
+              </AccessibilityProperties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="scrOrderSummary1">
               <AuxValues>
@@ -576,6 +579,9 @@
                 <Component class="javax.swing.JTextArea" name="txaOrderInfo1">
                   <Properties>
                     <Property name="columns" type="int" value="16"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="18" style="0"/>
+                    </Property>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
                 </Component>
@@ -590,6 +596,9 @@
               <SubComponents>
                 <Component class="javax.swing.JList" name="jList1">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="18" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                       <StringArray count="5">
                         <StringItem index="0" value="Item 1"/>
@@ -606,34 +615,34 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="lbOrderSummary2">
+            <Component class="javax.swing.JLabel" name="lbCustomerList">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Order Summary:"/>
+                <Property name="text" type="java.lang.String" value="Customer List"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSubmitOrder1">
+            <Component class="javax.swing.JButton" name="btnDelete">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Submit Order"/>
+                <Property name="text" type="java.lang.String" value="Delete Customer"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmitOrder1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCalculate1">
+            <Component class="javax.swing.JButton" name="btnLoad">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="1"/>
                 </Property>
-                <Property name="label" type="java.lang.String" value="Calculate"/>
+                <Property name="text" type="java.lang.String" value="Load List"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalculate1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoadActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCompanyName2">

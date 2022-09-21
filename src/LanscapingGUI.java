@@ -63,14 +63,14 @@ public class LanscapingGUI extends javax.swing.JFrame {
         txaOrderInfo = new javax.swing.JTextArea();
         lblAddress = new javax.swing.JLabel();
         pnlCustomerList = new javax.swing.JPanel();
-        lbOrderSummary1 = new javax.swing.JLabel();
+        lblCustomerDetails = new javax.swing.JLabel();
         scrOrderSummary1 = new javax.swing.JScrollPane();
         txaOrderInfo1 = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        lbOrderSummary2 = new javax.swing.JLabel();
-        btnSubmitOrder1 = new javax.swing.JButton();
-        btnCalculate1 = new javax.swing.JButton();
+        lbCustomerList = new javax.swing.JLabel();
+        btnDelete = new javax.swing.JButton();
+        btnLoad = new javax.swing.JButton();
         lblCompanyName2 = new javax.swing.JLabel();
         mnbMain = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
@@ -276,7 +276,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
                         .addComponent(lblInstructions3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(scrOrderSummary, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                    .addComponent(scrOrderSummary, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                     .addComponent(btnSubmitOrder)
                     .addComponent(lbOrderSummary))
                 .addGap(40, 40, 40))
@@ -319,13 +319,15 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
         tabMain.addTab("Information", pnlInformation);
 
-        lbOrderSummary1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbOrderSummary1.setText("Order Summary:");
+        lblCustomerDetails.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblCustomerDetails.setText("Customer Details");
 
         txaOrderInfo1.setColumns(16);
+        txaOrderInfo1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txaOrderInfo1.setRows(5);
         scrOrderSummary1.setViewportView(txaOrderInfo1);
 
+        jList1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -333,22 +335,22 @@ public class LanscapingGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        lbOrderSummary2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbOrderSummary2.setText("Order Summary:");
+        lbCustomerList.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbCustomerList.setText("Customer List");
 
-        btnSubmitOrder1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnSubmitOrder1.setText("Submit Order");
-        btnSubmitOrder1.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnDelete.setText("Delete Customer");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitOrder1ActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
 
-        btnCalculate1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnCalculate1.setLabel("Calculate");
-        btnCalculate1.addActionListener(new java.awt.event.ActionListener() {
+        btnLoad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnLoad.setText("Load List");
+        btnLoad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalculate1ActionPerformed(evt);
+                btnLoadActionPerformed(evt);
             }
         });
 
@@ -368,16 +370,16 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 .addGap(33, 33, 33))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerListLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
-                .addComponent(lbOrderSummary2)
+                .addComponent(lbCustomerList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbOrderSummary1)
+                .addComponent(lblCustomerDetails)
                 .addGap(125, 125, 125))
             .addGroup(pnlCustomerListLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(btnCalculate1)
+                .addGap(82, 82, 82)
+                .addComponent(btnLoad)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSubmitOrder1)
-                .addGap(130, 130, 130))
+                .addComponent(btnDelete)
+                .addGap(112, 112, 112))
             .addComponent(lblCompanyName2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlCustomerListLayout.setVerticalGroup(
@@ -387,18 +389,20 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 .addComponent(lblCompanyName2)
                 .addGap(27, 27, 27)
                 .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbOrderSummary1)
-                    .addComponent(lbOrderSummary2))
+                    .addComponent(lblCustomerDetails)
+                    .addComponent(lbCustomerList))
                 .addGap(18, 18, 18)
-                .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(scrOrderSummary1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
+                .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrOrderSummary1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCalculate1)
-                    .addComponent(btnSubmitOrder1))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(btnDelete)
+                    .addComponent(btnLoad))
+                .addGap(21, 21, 21))
         );
+
+        lblCustomerDetails.getAccessibleContext().setAccessibleName("Customer Details");
 
         tabMain.addTab("Customer List", pnlCustomerList);
 
@@ -440,7 +444,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabMain, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(tabMain)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -492,14 +496,13 @@ public class LanscapingGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_rdoGravelActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        // create the second GUI form
-        LanscapingGUI_Info infoForm = new LanscapingGUI_Info();
-
-        // set default close operation to "dispose" so application stays open
-        infoForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        // launch the second GUI form by making it visible
-        infoForm.setVisible(true);
+        // confirm that a selection was made then move to next tab
+        if (rdoGrass.isSelected() == false && rdoGravel.isSelected() == false) {
+            JOptionPane.showMessageDialog(this, "Please select the type of yard.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            tabMain.setSelectedIndex(1);
+        }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnSubmitOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitOrderActionPerformed
@@ -517,13 +520,13 @@ public class LanscapingGUI extends javax.swing.JFrame {
         txaOrderInfo.setText(cust.getDetails());
     }//GEN-LAST:event_btnCalculateActionPerformed
 
-    private void btnSubmitOrder1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitOrder1ActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSubmitOrder1ActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void btnCalculate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculate1ActionPerformed
+    private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCalculate1ActionPerformed
+    }//GEN-LAST:event_btnLoadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -563,20 +566,20 @@ public class LanscapingGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgYardType;
     private javax.swing.JButton btnCalculate;
-    private javax.swing.JButton btnCalculate1;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnLoad;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSubmitOrder;
-    private javax.swing.JButton btnSubmitOrder1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbCustomerList;
     private javax.swing.JLabel lbOrderSummary;
-    private javax.swing.JLabel lbOrderSummary1;
-    private javax.swing.JLabel lbOrderSummary2;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCompanyName;
     private javax.swing.JLabel lblCompanyName1;
     private javax.swing.JLabel lblCompanyName2;
+    private javax.swing.JLabel lblCustomerDetails;
     private javax.swing.JLabel lblGrassCost;
     private javax.swing.JLabel lblGravelCost;
     private javax.swing.JLabel lblImage;
@@ -609,11 +612,30 @@ public class LanscapingGUI extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void reset() {
+        tabMain.setSelectedIndex(0);
         // clear the radiobutton selection
         btgYardType.clearSelection();
-
         // put the image back to "Dirt"
-        lblImage.setIcon(new ImageIcon(this.getClass().getResource("./imgs/dirt_400.jpg")));
+        lblImage.setIcon(new ImageIcon(
+                this.getClass().getResource("./imgs/dirt_400.jpg")));
+        txtName.setText("");
+        this.txtName.requestFocusInWindow();
+        txtAddress.setText("");
+        txtLength.setText("");
+        txtWidth.setText("");
+        txaOrderInfo.setText("");
+    }
+
+    private void submitOrder() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private boolean validateInputs() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private Customer createCustomer() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
