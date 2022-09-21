@@ -203,6 +203,9 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
         tabMain.addTab("Welcome", pnlWelcome);
 
+        txtName.setFocusCycleRoot(true);
+        txtName.setNextFocusableComponent(txtAddress);
+
         btnSubmitOrder.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnSubmitOrder.setText("Submit Order");
         btnSubmitOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -211,14 +214,20 @@ public class LanscapingGUI extends javax.swing.JFrame {
             }
         });
 
+        txtAddress.setNextFocusableComponent(txtLength);
+
         lblInstructions2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblInstructions2.setText("Enter the length and width of your yard:");
 
         lblLength.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         lblLength.setText("Length (ft.)");
 
+        txtLength.setNextFocusableComponent(txtWidth);
+
         lblWidth.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         lblWidth.setText("Width (ft.)");
+
+        txtWidth.setNextFocusableComponent(btnCalculate);
 
         lblCompanyName1.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
         lblCompanyName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -226,6 +235,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
         btnCalculate.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCalculate.setLabel("Calculate");
+        btnCalculate.setNextFocusableComponent(btnSubmitOrder);
         btnCalculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalculateActionPerformed(evt);
@@ -402,7 +412,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrOrderSummary1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
@@ -455,8 +465,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tabMain)
+                .addComponent(tabMain, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -467,9 +476,6 @@ public class LanscapingGUI extends javax.swing.JFrame {
 // exit the application
         System.exit(0);
     }//GEN-LAST:event_mniExitActionPerformed
-
-    private void mniSubmitOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSubmitOrderActionPerformed
-        JOptionPane.showMessageDialog(this, "Method is not complete.");    }//GEN-LAST:event_mniSubmitOrderActionPerformed
 
     private void mniResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniResetActionPerformed
         // Reset
@@ -553,6 +559,11 @@ public class LanscapingGUI extends javax.swing.JFrame {
             txaCustomerInfo.setText(cust.getDetails());
         }
     }//GEN-LAST:event_lstCustomersValueChanged
+
+    private void mniSubmitOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSubmitOrderActionPerformed
+        // submit the order
+        submitOrder();
+    }//GEN-LAST:event_mniSubmitOrderActionPerformed
 
     /**
      * @param args the command line arguments
