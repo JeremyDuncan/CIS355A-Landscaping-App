@@ -16,8 +16,8 @@ import javax.swing.JOptionPane;
 public class LanscapingGUI extends javax.swing.JFrame {
 
     //CLASS LEVEL REFERENCES
-    DefaultListModel<Customer> customerList = new DefaultListModel( );
-    
+    DefaultListModel<Customer> customerList = new DefaultListModel();
+
     private final double GRASS_PER_SQFT = 5.0;
     private final double GRAVEL_PER_SQFT = 2.0;
 
@@ -74,7 +74,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         scrOrderSummary1 = new javax.swing.JScrollPane();
         txaCustomerInfo = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lstCustomers = new javax.swing.JList<>();
         lbCustomerList = new javax.swing.JLabel();
         btnDelete = new javax.swing.JButton();
         btnLoad = new javax.swing.JButton();
@@ -334,13 +334,14 @@ public class LanscapingGUI extends javax.swing.JFrame {
         txaCustomerInfo.setRows(5);
         scrOrderSummary1.setViewportView(txaCustomerInfo);
 
-        jList1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        lstCustomers.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lstCustomers.setModel(customerList);
+        lstCustomers.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstCustomersValueChanged(evt);
+            }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(lstCustomers);
 
         lbCustomerList.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbCustomerList.setText("Customer List");
@@ -400,8 +401,8 @@ public class LanscapingGUI extends javax.swing.JFrame {
                     .addComponent(lbCustomerList))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrOrderSummary1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(scrOrderSummary1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
@@ -528,12 +529,32 @@ public class LanscapingGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+        // get the index for the selected item
+        int index = lstCustomers.getSelectedIndex();
+
+        // if something is selected, delete it and clear the details textarea
+        if (index > -1) {
+            customerList.remove(index);
+            txaCustomerInfo.setText("");
+        }
+
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Method is incomplete.");
+
     }//GEN-LAST:event_btnLoadActionPerformed
+
+    private void lstCustomersValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstCustomersValueChanged
+        // get selected item’s index number
+        int index = lstCustomers.getSelectedIndex();
+
+        // if something was selected, show the object’s details
+        if (index > -1) {
+            Customer cust = customerList.getElementAt(index);
+            txaCustomerInfo.setText(cust.getDetails());
+        }
+    }//GEN-LAST:event_lstCustomersValueChanged
 
     /**
      * @param args the command line arguments
@@ -578,7 +599,6 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSubmitOrder;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbCustomerList;
     private javax.swing.JLabel lbOrderSummary;
@@ -596,6 +616,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblLength;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblWidth;
+    private javax.swing.JList<Customer> lstCustomers;
     private javax.swing.JMenuBar mnbMain;
     private javax.swing.JMenuItem mniExit;
     private javax.swing.JMenuItem mniReset;
