@@ -45,6 +45,33 @@ public class LanscapingGUI extends javax.swing.JFrame {
         lblGravelCost = new javax.swing.JLabel();
         lblGrassCost = new javax.swing.JLabel();
         lblImage = new javax.swing.JLabel();
+        pnlInformation = new javax.swing.JPanel();
+        txtName = new javax.swing.JTextField();
+        btnSubmitOrder = new javax.swing.JButton();
+        txtAddress = new javax.swing.JTextField();
+        lblInstructions2 = new javax.swing.JLabel();
+        lblLength = new javax.swing.JLabel();
+        txtLength = new javax.swing.JTextField();
+        lblWidth = new javax.swing.JLabel();
+        txtWidth = new javax.swing.JTextField();
+        lblCompanyName1 = new javax.swing.JLabel();
+        btnCalculate = new javax.swing.JButton();
+        lblInstructions3 = new javax.swing.JLabel();
+        lbOrderSummary = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        scrOrderSummary = new javax.swing.JScrollPane();
+        txaOrderInfo = new javax.swing.JTextArea();
+        lblAddress = new javax.swing.JLabel();
+        pnlCustomerList = new javax.swing.JPanel();
+        lbOrderSummary1 = new javax.swing.JLabel();
+        scrOrderSummary1 = new javax.swing.JScrollPane();
+        txaOrderInfo1 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        lbOrderSummary2 = new javax.swing.JLabel();
+        btnSubmitOrder1 = new javax.swing.JButton();
+        btnCalculate1 = new javax.swing.JButton();
+        lblCompanyName2 = new javax.swing.JLabel();
         mnbMain = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
         mniExit = new javax.swing.JMenuItem();
@@ -116,34 +143,39 @@ public class LanscapingGUI extends javax.swing.JFrame {
         pnlWelcome.setLayout(pnlWelcomeLayout);
         pnlWelcomeLayout.setHorizontalGroup(
             pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlWelcomeLayout.createSequentialGroup()
-                .addGap(225, 225, 225)
-                .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlWelcomeLayout.createSequentialGroup()
-                        .addComponent(lblGrassCost, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(lblGravelCost))
-                    .addGroup(pnlWelcomeLayout.createSequentialGroup()
-                        .addComponent(rdoGrass)
-                        .addGap(134, 134, 134)
-                        .addComponent(rdoGravel)))
-                .addContainerGap(249, Short.MAX_VALUE))
+            .addComponent(lblInstructions1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlWelcomeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
                 .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(105, 105, 105))
-            .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(lblCompanyName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblInstructions1, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE))
+                    .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                        .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                                .addComponent(lblGrassCost, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(130, 130, 130)
+                                .addComponent(lblGravelCost))
+                            .addGroup(pnlWelcomeLayout.createSequentialGroup()
+                                .addComponent(rdoGrass)
+                                .addGap(134, 134, 134)
+                                .addComponent(rdoGravel)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlWelcomeLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)
+                        .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(151, 151, 151))
+            .addComponent(lblCompanyName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlWelcomeLayout.setVerticalGroup(
             pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlWelcomeLayout.createSequentialGroup()
-                .addGap(148, 148, 148)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlWelcomeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblCompanyName)
+                .addGap(18, 18, 18)
+                .addComponent(lblInstructions1)
+                .addGap(18, 18, 18)
                 .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlWelcomeLayout.createSequentialGroup()
                         .addComponent(btnNext)
@@ -159,17 +191,216 @@ public class LanscapingGUI extends javax.swing.JFrame {
                             .addComponent(lblGravelCost))
                         .addGap(18, 18, 18)
                         .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
-            .addGroup(pnlWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlWelcomeLayout.createSequentialGroup()
-                    .addGap(0, 10, Short.MAX_VALUE)
-                    .addComponent(lblCompanyName)
-                    .addGap(38, 38, 38)
-                    .addComponent(lblInstructions1)
-                    .addGap(0, 249, Short.MAX_VALUE)))
+                .addGap(62, 62, 62))
         );
 
         tabMain.addTab("Welcome", pnlWelcome);
+
+        btnSubmitOrder.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnSubmitOrder.setText("Submit Order");
+        btnSubmitOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitOrderActionPerformed(evt);
+            }
+        });
+
+        lblInstructions2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblInstructions2.setText("Enter the length and width of your yard:");
+
+        lblLength.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblLength.setText("Length (ft.)");
+
+        lblWidth.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblWidth.setText("Width (ft.)");
+
+        lblCompanyName1.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        lblCompanyName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCompanyName1.setText("Jeremy Duncan Landscapes");
+
+        btnCalculate.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnCalculate.setLabel("Calculate");
+        btnCalculate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateActionPerformed(evt);
+            }
+        });
+
+        lblInstructions3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblInstructions3.setText("Please enter your information:");
+
+        lbOrderSummary.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbOrderSummary.setText("Order Summary:");
+
+        lblName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblName.setText("Name:");
+
+        txaOrderInfo.setColumns(16);
+        txaOrderInfo.setRows(5);
+        scrOrderSummary.setViewportView(txaOrderInfo);
+
+        lblAddress.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblAddress.setText("Address:");
+
+        javax.swing.GroupLayout pnlInformationLayout = new javax.swing.GroupLayout(pnlInformation);
+        pnlInformation.setLayout(pnlInformationLayout);
+        pnlInformationLayout.setHorizontalGroup(
+            pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInformationLayout.createSequentialGroup()
+                .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlInformationLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addGroup(pnlInformationLayout.createSequentialGroup()
+                                .addComponent(lblLength)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLength, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblWidth)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnCalculate)))
+                    .addGroup(pnlInformationLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(lblInstructions2))
+                    .addGroup(pnlInformationLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAddress)
+                            .addComponent(lblName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlInformationLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(lblInstructions3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(scrOrderSummary, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                    .addComponent(btnSubmitOrder)
+                    .addComponent(lbOrderSummary))
+                .addGap(40, 40, 40))
+            .addComponent(lblCompanyName1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlInformationLayout.setVerticalGroup(
+            pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInformationLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCompanyName1)
+                .addGap(38, 38, 38)
+                .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblInstructions3)
+                    .addComponent(lbOrderSummary))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlInformationLayout.createSequentialGroup()
+                        .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblName)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAddress))
+                        .addGap(24, 24, 24)
+                        .addComponent(lblInstructions2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblLength)
+                            .addComponent(txtLength, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblWidth)
+                            .addComponent(txtWidth, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(scrOrderSummary))
+                .addGap(18, 18, 18)
+                .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalculate)
+                    .addComponent(btnSubmitOrder))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tabMain.addTab("Information", pnlInformation);
+
+        lbOrderSummary1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbOrderSummary1.setText("Order Summary:");
+
+        txaOrderInfo1.setColumns(16);
+        txaOrderInfo1.setRows(5);
+        scrOrderSummary1.setViewportView(txaOrderInfo1);
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        lbOrderSummary2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbOrderSummary2.setText("Order Summary:");
+
+        btnSubmitOrder1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnSubmitOrder1.setText("Submit Order");
+        btnSubmitOrder1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitOrder1ActionPerformed(evt);
+            }
+        });
+
+        btnCalculate1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnCalculate1.setLabel("Calculate");
+        btnCalculate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculate1ActionPerformed(evt);
+            }
+        });
+
+        lblCompanyName2.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        lblCompanyName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCompanyName2.setText("Jeremy Duncan Landscapes");
+
+        javax.swing.GroupLayout pnlCustomerListLayout = new javax.swing.GroupLayout(pnlCustomerList);
+        pnlCustomerList.setLayout(pnlCustomerListLayout);
+        pnlCustomerListLayout.setHorizontalGroup(
+            pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerListLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(scrOrderSummary1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerListLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(lbOrderSummary2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbOrderSummary1)
+                .addGap(125, 125, 125))
+            .addGroup(pnlCustomerListLayout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(btnCalculate1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSubmitOrder1)
+                .addGap(130, 130, 130))
+            .addComponent(lblCompanyName2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlCustomerListLayout.setVerticalGroup(
+            pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCustomerListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCompanyName2)
+                .addGap(27, 27, 27)
+                .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbOrderSummary1)
+                    .addComponent(lbOrderSummary2))
+                .addGap(18, 18, 18)
+                .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(scrOrderSummary1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCustomerListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalculate1)
+                    .addComponent(btnSubmitOrder1))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        tabMain.addTab("Customer List", pnlCustomerList);
 
         mnuFile.setText("File");
 
@@ -209,7 +440,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabMain)
+            .addComponent(tabMain, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,6 +502,29 @@ public class LanscapingGUI extends javax.swing.JFrame {
         infoForm.setVisible(true);
     }//GEN-LAST:event_btnNextActionPerformed
 
+    private void btnSubmitOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitOrderActionPerformed
+        submitOrder();
+    }//GEN-LAST:event_btnSubmitOrderActionPerformed
+
+    private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
+        // validate the inputs
+        if (validateInputs() == false) {
+            return;      // end the method if validation failed
+        }
+
+        // create the Customer object and show the information
+        Customer cust = createCustomer();
+        txaOrderInfo.setText(cust.getDetails());
+    }//GEN-LAST:event_btnCalculateActionPerformed
+
+    private void btnSubmitOrder1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitOrder1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSubmitOrder1ActionPerformed
+
+    private void btnCalculate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalculate1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -308,23 +562,50 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgYardType;
+    private javax.swing.JButton btnCalculate;
+    private javax.swing.JButton btnCalculate1;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnSubmitOrder;
+    private javax.swing.JButton btnSubmitOrder1;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbOrderSummary;
+    private javax.swing.JLabel lbOrderSummary1;
+    private javax.swing.JLabel lbOrderSummary2;
+    private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCompanyName;
+    private javax.swing.JLabel lblCompanyName1;
+    private javax.swing.JLabel lblCompanyName2;
     private javax.swing.JLabel lblGrassCost;
     private javax.swing.JLabel lblGravelCost;
     private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblInstructions1;
+    private javax.swing.JLabel lblInstructions2;
+    private javax.swing.JLabel lblInstructions3;
+    private javax.swing.JLabel lblLength;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblWidth;
     private javax.swing.JMenuBar mnbMain;
     private javax.swing.JMenuItem mniExit;
     private javax.swing.JMenuItem mniReset;
     private javax.swing.JMenuItem mniSubmitOrder;
     private javax.swing.JMenu mnuFile;
     private javax.swing.JMenu mnuOrder;
+    private javax.swing.JPanel pnlCustomerList;
+    private javax.swing.JPanel pnlInformation;
     private javax.swing.JPanel pnlWelcome;
     private javax.swing.JRadioButton rdoGrass;
     private javax.swing.JRadioButton rdoGravel;
+    private javax.swing.JScrollPane scrOrderSummary;
+    private javax.swing.JScrollPane scrOrderSummary1;
     private javax.swing.JTabbedPane tabMain;
+    private javax.swing.JTextArea txaOrderInfo;
+    private javax.swing.JTextArea txaOrderInfo1;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtLength;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtWidth;
     // End of variables declaration//GEN-END:variables
 
     private void reset() {
