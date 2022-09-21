@@ -1,5 +1,6 @@
 
 import java.net.URL;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -13,8 +14,9 @@ import javax.swing.JOptionPane;
  * @author jeremyduncan
  */
 public class LanscapingGUI extends javax.swing.JFrame {
-    
+
     //CLASS LEVEL REFERENCES
+    DefaultListModel<Customer> customerList = new DefaultListModel( );
     
     private final double GRASS_PER_SQFT = 5.0;
     private final double GRAVEL_PER_SQFT = 2.0;
@@ -70,7 +72,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         pnlCustomerList = new javax.swing.JPanel();
         lblCustomerDetails = new javax.swing.JLabel();
         scrOrderSummary1 = new javax.swing.JScrollPane();
-        txaOrderInfo1 = new javax.swing.JTextArea();
+        txaCustomerInfo = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         lbCustomerList = new javax.swing.JLabel();
@@ -327,10 +329,10 @@ public class LanscapingGUI extends javax.swing.JFrame {
         lblCustomerDetails.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblCustomerDetails.setText("Customer Details");
 
-        txaOrderInfo1.setColumns(16);
-        txaOrderInfo1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txaOrderInfo1.setRows(5);
-        scrOrderSummary1.setViewportView(txaOrderInfo1);
+        txaCustomerInfo.setColumns(16);
+        txaCustomerInfo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        txaCustomerInfo.setRows(5);
+        scrOrderSummary1.setViewportView(txaCustomerInfo);
 
         jList1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -608,8 +610,8 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrOrderSummary;
     private javax.swing.JScrollPane scrOrderSummary1;
     private javax.swing.JTabbedPane tabMain;
+    private javax.swing.JTextArea txaCustomerInfo;
     private javax.swing.JTextArea txaOrderInfo;
-    private javax.swing.JTextArea txaOrderInfo1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtLength;
     private javax.swing.JTextField txtName;
@@ -632,7 +634,20 @@ public class LanscapingGUI extends javax.swing.JFrame {
     }
 
     private void submitOrder() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (validateInputs() == false) {
+            return;    // end the method if validation failed
+        }
+
+        Customer cust = createCustomer();
+        customerList.addElement(cust);
+        txaOrderInfo.setText(cust.getDetails());
+
+// reset for the next customer
+        reset();
+
+//move to the client orders tab
+        tabMain.setSelectedIndex(2);
+
     }
 
     private boolean validateInputs() {
@@ -731,35 +746,29 @@ public class LanscapingGUI extends javax.swing.JFrame {
     }
 
     private Customer createCustomer() {
-          String name = txtName.getText();
+        String name = txtName.getText();
         String address = txtAddress.getText();
         double width = Double.parseDouble(txtWidth.getText());
         double length = Double.parseDouble(txtLength.getText());
         String yardType = "";
         double totalCost = 0.0;
 
-        if (rdoGrass.isSelected())
-        {
+        if (rdoGrass.isSelected()) {
             yardType = "Grass";
             totalCost = GRASS_PER_SQFT * width * length;
-        }
-        else if (rdoGravel.isSelected())
-        {
+        } else if (rdoGravel.isSelected()) {
             yardType = "Gravel";
             totalCost = GRAVEL_PER_SQFT * width * length;
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, 
- 			"Error. Please select a yard type.");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Error. Please select a yard type.");
             totalCost = 0.0;
         }
 
-Customer cust = new Customer(0, name, address, yardType, 
-    length, width, totalCost);
+        Customer cust = new Customer(0, name, address, yardType,
+                length, width, totalCost);
         return cust;
 
-        
     }
 
 }

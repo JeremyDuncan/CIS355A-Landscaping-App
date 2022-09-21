@@ -576,7 +576,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="txaOrderInfo1">
+                <Component class="javax.swing.JTextArea" name="txaCustomerInfo">
                   <Properties>
                     <Property name="columns" type="int" value="16"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
