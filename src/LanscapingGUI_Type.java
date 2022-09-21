@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author jeremyduncan
  */
-public class LanscapingGUI extends javax.swing.JFrame {
+public class LanscapingGUI_Type extends javax.swing.JFrame {
 
     /**
      * Creates new form LanscapingGUI
      */
-    public LanscapingGUI() {
+    public LanscapingGUI_Type() {
         initComponents();
 
         // Center the form
@@ -43,7 +43,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblImage = new javax.swing.JLabel();
-        mnbMain = new javax.swing.JMenuBar();
+        mnb1 = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
         mniExit = new javax.swing.JMenuItem();
         mnuOrder = new javax.swing.JMenu();
@@ -54,17 +54,19 @@ public class LanscapingGUI extends javax.swing.JFrame {
         setTitle("Jeremy Duncan Landscapes");
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(700, 344));
-        setPreferredSize(new java.awt.Dimension(720, 440));
         setResizable(false);
         setSize(new java.awt.Dimension(770, 360));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCompanyName.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
         lblCompanyName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCompanyName.setText("Jeremy Duncan Landscapes");
+        getContentPane().add(lblCompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 12, 720, -1));
 
         lblInstructions1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblInstructions1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInstructions1.setText("Would you like a grass or gravel yard?");
+        getContentPane().add(lblInstructions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 87, 720, -1));
 
         btnReset.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnReset.setText("Reset");
@@ -73,6 +75,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
+        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 110, -1));
 
         btgYardType.add(rdoGrass);
         rdoGrass.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -83,6 +86,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 rdoGrassActionPerformed(evt);
             }
         });
+        getContentPane().add(rdoGrass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 148, -1, -1));
 
         btgYardType.add(rdoGravel);
         rdoGravel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -93,6 +97,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 rdoGravelActionPerformed(evt);
             }
         });
+        getContentPane().add(rdoGravel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 148, -1, -1));
 
         btnNext.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnNext.setText("Next");
@@ -101,14 +106,18 @@ public class LanscapingGUI extends javax.swing.JFrame {
                 btnNextActionPerformed(evt);
             }
         });
+        getContentPane().add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 110, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel1.setText("$2 per sqft");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel2.setText("$5 per sqft");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 80, -1));
 
         lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Dirt_400.jpg"))); // NOI18N
+        getContentPane().add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 160, 120));
 
         mnuFile.setText("File");
 
@@ -120,7 +129,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         });
         mnuFile.add(mniExit);
 
-        mnbMain.add(mnuFile);
+        mnb1.add(mnuFile);
 
         mnuOrder.setText("Order");
 
@@ -140,57 +149,9 @@ public class LanscapingGUI extends javax.swing.JFrame {
         });
         mnuOrder.add(mniReset);
 
-        mnbMain.add(mnuOrder);
+        mnb1.add(mnuOrder);
 
-        setJMenuBar(mnbMain);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblCompanyName, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(lblInstructions1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(rdoGrass)
-                .addGap(134, 134, 134)
-                .addComponent(rdoGravel))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(130, 130, 130)
-                .addComponent(jLabel1))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(lblCompanyName)
-                .addGap(38, 38, 38)
-                .addComponent(lblInstructions1)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rdoGrass)
-                    .addComponent(rdoGravel))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(btnNext)
-                        .addGap(16, 16, 16)
-                        .addComponent(btnReset))))
-        );
+        setJMenuBar(mnb1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -292,7 +253,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblCompanyName;
     private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblInstructions1;
-    private javax.swing.JMenuBar mnbMain;
+    private javax.swing.JMenuBar mnb1;
     private javax.swing.JMenuItem mniExit;
     private javax.swing.JMenuItem mniReset;
     private javax.swing.JMenuItem mniSubmitOrder;
