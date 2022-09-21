@@ -565,9 +565,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Customer Details"/>
               </Properties>
-              <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Customer Details"/>
-              </AccessibilityProperties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="scrOrderSummary1">
               <AuxValues>
