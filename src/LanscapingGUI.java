@@ -1,6 +1,7 @@
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -30,6 +31,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
 
         // Center the form
         this.setLocationRelativeTo(null);
+        loadCustomers();
     }
 
     /**
@@ -534,19 +536,25 @@ public class LanscapingGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // get the index for the selected item
-        int index = lstCustomers.getSelectedIndex();
+        try {
+            // get the selected object
+            Customer old = lstCustomers.getSelectedValue();
 
-        // if something is selected, delete it and clear the details textarea
-        if (index > -1) {
-            customerList.remove(index);
-            txaCustomerInfo.setText("");
+            // if something is selected, delete it and clear the details textarea
+            if (old != null) {
+                DataIO data = new DataIO();
+                data.delete(old.getName());   // get the name only
+                txaCustomerInfo.setText("");
+                loadCustomers();
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(),
+                    "DataIO Error", JOptionPane.ERROR_MESSAGE);
         }
-
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-        JOptionPane.showMessageDialog(this, "Method is incomplete.");
+        loadCustomers();
 
     }//GEN-LAST:event_btnLoadActionPerformed
 
@@ -676,6 +684,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         try {
             DataIO data = new DataIO();
             data.add(cust);
+            loadCustomers(); // load all customers
 
             // reset for the next customer
             reset();
@@ -807,6 +816,26 @@ public class LanscapingGUI extends javax.swing.JFrame {
         Customer cust = new Customer(0, name, address, yardType,
                 length, width, totalCost);
         return cust;
+
+    }
+
+    private void loadCustomers() {
+        try {
+            DataIO data = new DataIO(); // create DataIO object
+            ArrayList<Customer> customers = data.getList();
+
+            // clear out the DefaultListModel and textarea
+            customerList.clear();
+            txaOrderInfo.setText("");
+
+            // copy each object from the ArrayList over to the DefaultListModel
+            for (int i = 0; i < customers.size(); i++) {
+                customerList.addElement(customers.get(i));
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(),
+                    "File IO Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
 

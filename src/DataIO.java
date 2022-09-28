@@ -1,6 +1,7 @@
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -36,7 +37,25 @@ public class DataIO {
         outfile.close();
     }
 
-    public void delete(int customerID) {
+    public void delete(String deleteName) throws IOException {
+        // get all records
+        ArrayList<Customer> customers = getList();
+
+        // delete the old file
+        File oldFile = new File("Customers.txt");
+        if (oldFile.exists() == false) {
+            throw new IOException("File does not exist!");
+        }
+        oldFile.delete();
+
+        // write "good" records to the file
+        for (Customer cust : customers) // foreach loops are cool!
+        {
+            if (deleteName.equalsIgnoreCase(cust.getName()) == false) {
+                // good record so write it to the file
+                add(cust);
+            }
+        }
 
     }
 
@@ -77,7 +96,6 @@ public class DataIO {
 
         // return the ArrayList
         return customers;
-
     }
 
 }

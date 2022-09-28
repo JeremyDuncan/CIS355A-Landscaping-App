@@ -1,3 +1,2 @@
 Jeremy Duncan#234 AnyStreet LA, CA 90211#Grass#23.0#22.0#2530.0
 Jack Black#1111 West Ash Drive, Tempe, AZ 82021#Gravel#10.0#12.0#240.0
-Jane Doe#890 Down Road Lane, Atlanta, GA 30331#Grass#20.0#40.0#4000.0
