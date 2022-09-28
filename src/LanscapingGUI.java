@@ -672,19 +672,20 @@ public class LanscapingGUI extends javax.swing.JFrame {
         Customer cust = createCustomer();
         customerList.addElement(cust);
         txaOrderInfo.setText(cust.getDetails());
-        
-        try {
-        DataIO data = new DataIO();
-        data.add(cust);
-        }
-        catch(IOException ex) {
-            JOptionPane.showMessageDialog(this, "Error: " +ex.getMessage(), "File IO Error", JOptionPane.ERROR_MESSAGE);
-        }
-// reset for the next customer
-        reset();
 
-//move to the client orders tab
-        tabMain.setSelectedIndex(2);
+        try {
+            DataIO data = new DataIO();
+            data.add(cust);
+
+            // reset for the next customer
+            reset();
+
+            //move to the client orders tab
+            tabMain.setSelectedIndex(2);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(),
+                    "File IO Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
 

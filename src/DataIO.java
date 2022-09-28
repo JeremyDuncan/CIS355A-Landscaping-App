@@ -1,8 +1,12 @@
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -36,8 +40,44 @@ public class DataIO {
 
     }
 
-    public ArrayList<Customer> getList() {
-        return null;
+    public ArrayList<Customer> getList() throws FileNotFoundException, IOException {
+        // get Customer objects from the file and return as ArrayList
+        //create an arraylist
+        ArrayList<Customer> customers = new ArrayList<Customer>();
+
+        // read data from the file
+        BufferedReader inbuffer = new BufferedReader(new FileReader("Customers.txt"));
+        StringTokenizer tokens;
+
+        //get first line
+        String inputString = inbuffer.readLine();
+        while (inputString != null) {
+            //break the line into pieces using Tokenizer
+            tokens = new StringTokenizer(inputString, "#");
+
+            //fields are name#address#yardType#length#width#totalCost
+            String name = tokens.nextToken();
+            String address = tokens.nextToken();
+            String yardType = tokens.nextToken();
+            double length = Double.parseDouble(tokens.nextToken());
+            double width = Double.parseDouble(tokens.nextToken());
+            double totalCost = Double.parseDouble(tokens.nextToken());
+
+            // create Customer object and add it to the ArrayList
+            Customer cust = new Customer(0, name, address, yardType, length,
+                    width, totalCost);
+            customers.add(cust);
+
+            //read next line
+            inputString = inbuffer.readLine();
+        }
+
+        // close the pipe to the file once the records have been read
+        inbuffer.close();
+
+        // return the ArrayList
+        return customers;
+
     }
 
 }
