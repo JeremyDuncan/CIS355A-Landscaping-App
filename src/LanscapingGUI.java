@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.net.URL;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -7,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/Sys temFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 /**
  *
@@ -465,7 +466,7 @@ public class LanscapingGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(tabMain, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addComponent(tabMain)
                 .addContainerGap())
         );
 
@@ -671,7 +672,14 @@ public class LanscapingGUI extends javax.swing.JFrame {
         Customer cust = createCustomer();
         customerList.addElement(cust);
         txaOrderInfo.setText(cust.getDetails());
-
+        
+        try {
+        DataIO data = new DataIO();
+        data.add(cust);
+        }
+        catch(IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error: " +ex.getMessage(), "File IO Error", JOptionPane.ERROR_MESSAGE);
+        }
 // reset for the next customer
         reset();
 
