@@ -1,5 +1,5 @@
 
-import java.io.IOException;
+import java.sql.*;
 import java.net.URL;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
@@ -543,14 +543,15 @@ public class LanscapingGUI extends javax.swing.JFrame {
             // if something is selected, delete it and clear the details textarea
             if (old != null) {
                 DataIO data = new DataIO();
-                data.delete(old.getName());   // get the name only
+                data.delete(old.getCustomerID());   // get the name only
                 txaCustomerInfo.setText("");
                 loadCustomers();
             }
-        } catch (IOException ex) {
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(),
-                    "DataIO Error", JOptionPane.ERROR_MESSAGE);
+                    "Database Error", JOptionPane.ERROR_MESSAGE);
         }
+
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
@@ -682,18 +683,21 @@ public class LanscapingGUI extends javax.swing.JFrame {
         txaOrderInfo.setText(cust.getDetails());
 
         try {
-            DataIO data = new DataIO();
+            DataIO data = new DataIO(); // create DataIO object
             data.add(cust);
-            loadCustomers(); // load all customers
+            loadCustomers();  // load all customers
 
             // reset for the next customer
             reset();
 
             //move to the client orders tab
             tabMain.setSelectedIndex(2);
-        } catch (IOException ex) {
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(),
-                    "File IO Error", JOptionPane.ERROR_MESSAGE);
+                    "Database Error", JOptionPane.ERROR_MESSAGE);
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(this, "Driver Not Found Error: " + ex.getMessage(),
+                    "Database Driver Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -832,11 +836,10 @@ public class LanscapingGUI extends javax.swing.JFrame {
             for (int i = 0; i < customers.size(); i++) {
                 customerList.addElement(customers.get(i));
             }
-        } catch (IOException ex) {
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(),
-                    "File IO Error", JOptionPane.ERROR_MESSAGE);
+                    "Database Error", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
 }
